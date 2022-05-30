@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root{
@@ -11,6 +12,12 @@
     --lighterColor: #FDF6EC;
     --darkerColor: #212121;
     --darkColor: #323232;
+}
+
+body{
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .dark_body{
@@ -25,6 +32,10 @@
 .dark_body .nav-link{
     color: var(--lightColor);
 }
+
+.dark_body #main-doc code{
+    background-color: #323232;
+}
 /* .................................... */
 /* NAVBAR */
 .navbar__container{
@@ -33,6 +44,7 @@
     background-color: var(--lightColor);
     position: fixed;
     left: 0;
+    z-index: 9999;
 }
 
 .navbar__header{
@@ -112,14 +124,72 @@
     padding-left: 0.5rem;
 }
 
+/* .............................. */
+/* MAIN DOC */
+
+#main-doc{
+    width: auto;
+    height: auto;
+    margin-left: 320px;
+    padding: 5rem 2rem;
+}
+
+#main-doc > .main-section:not(:first-child){
+    margin-top: 5rem;
+}
+
+.main-section header{
+    font-family: var(--primaryFont);
+    border-bottom: 3px solid var(--darkColor);
+    padding-bottom: 0.5rem;
+}
+
+.main-section p {
+    font-family: var(--secondaryFont);
+    margin: 20px 0;
+}
+
+.main-section ul {
+    font-family: var(--secondaryFont);
+    font-size: 0.9rem;
+    padding-left: 4rem;
+    width: 100%;
+}
+
+.main-section ul li{
+    margin-bottom: 10px;
+}
+
+.main-section ul li ul{
+    margin-top: 10px;
+}
+
+.main-section code{
+    display: block;
+    text-align: left;
+    white-space: pre-line;
+    position: relative;
+    word-break: normal; 
+    word-wrap: normal;
+    line-height: 2;
+    background-color: #ECF0F1;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.single_list{
+    margin: 20px 0;
+}
+
 @media screen and (max-width: 650px) {
     .navbar__container{
-        width: 70px;
+        width: 10%;
         transition: width 0.5s ease-in-out;
     }
 
     .navbar-open{
-        width: 80vw;
+        width: 80%;
     }
 
     .navbar__header{
@@ -158,5 +228,13 @@
     .navbar__theme_btn{
         bottom: -25px;
     }
+
+    /* Main doc */
+    #main-doc{
+        width: auto;
+        height: auto;
+        padding: 2rem 1rem 2rem 5rem;
+        margin-left: 0;
+    }    
     
 }

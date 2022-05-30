@@ -16,7 +16,7 @@ const navbarTitle = document.getElementById('nav-title')
 
 const assignNavTitle = () => {
     if(navbar.offsetWidth < 200){
-        navbarTitle.innerText = "JS"
+        navbarTitle.innerText = ""
     }else{
         navbarTitle.innerText = "JS Documentation"
     }
@@ -43,7 +43,7 @@ mobileBtn.addEventListener('click', () => {
         navbarTitle.innerText = "JS Documentation"
     }else{
         mobileBtnIcon.classList.replace('fa-angles-left', 'fa-angles-right')
-        navbarTitle.innerText = "JS"
+        navbarTitle.innerText = ""
     }
       
 })
